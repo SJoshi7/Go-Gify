@@ -1,0 +1,28 @@
+#search-div{
+	width: 80%;
+	margin: 20px;
+	margin-top: 5%;
+	margin-left: 10%;
+}
+
+#content-div{
+	margin-left: 20%;
+}
+
+.gif-div{
+	width: 350px;
+	height: 250px;
+	margin:15px;
+}
+
+.gif-div img{
+	max-width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    box-shadow: 5px 5px white;
+}
+
+body{
+	background-color: #28A745;
+}

@@ -26,7 +26,7 @@
 			<div id="search-div">
 				<nav>
 				    <div class="nav-wrapper light-blue darken-2">
-				      <form onsubmit="searchGif(); return false;">
+				      <form onsubmit="searchGif(1); return false;">
 				        <div class="input-field white">
 				          <input id="query" type="search" placeholder="search" required>
 				          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
@@ -39,65 +39,45 @@
 
 			<!-- section to display the GIFs -->
 			<div id="content-div" class="row ">
-				<!-- <div class="col s12 m6 l3 gif-div">
-					<img src="https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif">
-				</div>
-				<div class="col s12 m6 l3 gif-div">
-					<img src="https://media.giphy.com/media/OPU6wzx8JrHna/giphy.gif">
-				</div>
-				<div class="col s12 m6 l3 gif-div">
-					<img src="https://media.giphy.com/media/l1KVaj5UcbHwrBMqI/giphy.gif">
-				</div>
-				<div class="col s12 m6 l3 gif-div">
-					<img src="https://media.giphy.com/media/3oEjI80DSa1grNPTDq/giphy.gif">
-				</div>
-				<div class="col s12 m6 l3 gif-div">
-					<img src="https://media.giphy.com/media/1BXa2alBjrCXC/giphy.gif">
-				</div>
-				<div class="col s12 m6 l3 gif-div">
-					<img src="https://media.giphy.com/media/a9xhxAxaqOfQs/giphy.gif">
-				</div> -->
-				<script type="">	
-		const app = document.getElementById('content-div');
-		var api = "https://api.giphy.com/v1/gifs/trending?";
-		var apiKey = "&api_key=6gB95G4VQIE6zjRlryyFgXjTpxfRzCnf";
-		var trendingUrl = api + apiKey;
+				<script type="">
+					const app = document.getElementById('content-div');
+					const trendingUrl = "https://api.giphy.com/v1/gifs/trending?&api_key=6gB95G4VQIE6zjRlryyFgXjTpxfRzCnf&limit=30";
 
-		var request = new XMLHttpRequest();
-		request.open('GET',trendingUrl,true);
+					var request = new XMLHttpRequest();
+					request.open('GET',trendingUrl,true);
 
-		request.onload = function(){
-			var dataFetched = JSON.parse(this.response);
-			
-			if(request.status>=200 && request.status<=400){
-				document.getElementById("content-div").innerHTML = "";
-				for(var i=0;i<6;i++){
-					const gifDiv = document.createElement('div');
-					gifDiv.setAttribute('class','col s12 m4 l3 gif-div');
-					app.appendChild(gifDiv);
-					const newgif = document.createElement('img');
-					newgif.setAttribute('src', dataFetched.data[i].images.original.url);
-					gifDiv.appendChild(newgif);
-				}
-			}
-			else{
-				console.log("error"); //to be edited
-			}
-		}
+					request.onload = function(){
+						var dataFetched = JSON.parse(this.response);
+						
+						if(request.status>=200 && request.status<=400){
+							document.getElementById("content-div").innerHTML = "";
+							for(var i=0;i<6;i++){
+								const gifDiv = document.createElement('div');
+								gifDiv.setAttribute('class','col s12 m4 l3 gif-div');
+								app.appendChild(gifDiv);
+								const newgif = document.createElement('img');
+								newgif.setAttribute('src', dataFetched.data[i].images.original.url);
+								gifDiv.appendChild(newgif);
+							}
+						}
+						else{
+							console.log("error"); //to be edited
+						}
+					}
 
-		request.send();
-	</script>
+					request.send();
+				</script>
 			</div>
 		</div>
 
 		<!-- pagination div -->
 		<ul class="pagination center">
 		    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-		    <li class="active black"><a href="#!">1</a></li>
-		    <li class="waves-effect"><a href="#!">2</a></li>
-		    <li class="waves-effect"><a href="#!">3</a></li>
-		    <li class="waves-effect"><a href="#!">4</a></li>
-		    <li class="waves-effect"><a href="#!">5</a></li>
+		    <li class="active black" id="1"><a onclick="searchGif(1)">1</a></li>
+		    <li class="waves-effect" id="2"><a onclick="searchGif(2)">2</a></li>
+		    <li class="waves-effect" id="3"><a onclick="searchGif(3)">3</a></li>
+		    <li class="waves-effect" id="4"><a onclick="searchGif(4)">4</a></li>
+		    <li class="waves-effect" id="5"><a onclick="searchGif(5)">5</a></li>
 		    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
 		</ul>
 

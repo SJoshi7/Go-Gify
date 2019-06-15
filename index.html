@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Go-GIFY</title>
+		<link rel="icon" href="img/icon.png" type="image/icon type">
 		<!-- Compiled and minified CSS -->
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 	    <!--Import Google Icon Font-->
@@ -24,7 +25,7 @@
 			<div id="search-div">
 				<nav>
 				    <div class="nav-wrapper light-blue darken-2">
-				      <form onsubmit="runTimer()">
+				      <form onsubmit="searchGif(); return false;">
 				        <div class="input-field white">
 				          <input id="query" type="search" placeholder="search" required>
 				          <label class="label-icon" for="search"><i class="material-icons">search</i></label>

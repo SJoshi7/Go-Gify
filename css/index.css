@@ -23,6 +23,14 @@
     box-shadow: 5px 5px white;
 }
 
+.pagination li a{
+	color:white;
+}
+
+.pagination li.disabled a{
+	color:black;
+}
+
 body{
 	background-color: #28A745;
 }

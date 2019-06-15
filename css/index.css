@@ -21,6 +21,7 @@
     min-height: 100%;
     min-width: 100%;
     box-shadow: 5px 5px white;
+    border: 2px solid black; 
 }
 
 .pagination li a{

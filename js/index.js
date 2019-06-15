@@ -1,5 +1,3 @@
-
-
 searchGif = () => {
 
 const app = document.getElementById('content-div');

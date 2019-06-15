@@ -1,3 +1,5 @@
+
+
 searchGif = () => {
 
 const app = document.getElementById('content-div');
@@ -12,8 +14,6 @@ request.open('GET',searchUrl,true);
 
 request.onload = function(){
 	var dataFetched = JSON.parse(this.response);
-	console.log(dataFetched.data[0].images.original.url);
-	console.log(dataFetched.data.length);
 	
 	if(request.status>=200 && request.status<=400){
 		document.getElementById("content-div").innerHTML = "";

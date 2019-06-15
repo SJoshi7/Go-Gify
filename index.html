@@ -39,7 +39,7 @@
 
 			<!-- section to display the GIFs -->
 			<div id="content-div" class="row ">
-				<div class="col s12 m6 l3 gif-div">
+				<!-- <div class="col s12 m6 l3 gif-div">
 					<img src="https://media.giphy.com/media/d2lcHJTG5Tscg/giphy.gif">
 				</div>
 				<div class="col s12 m6 l3 gif-div">
@@ -56,7 +56,37 @@
 				</div>
 				<div class="col s12 m6 l3 gif-div">
 					<img src="https://media.giphy.com/media/a9xhxAxaqOfQs/giphy.gif">
-				</div>
+				</div> -->
+				<script type="">	
+		const app = document.getElementById('content-div');
+		var api = "https://api.giphy.com/v1/gifs/trending?";
+		var apiKey = "&api_key=6gB95G4VQIE6zjRlryyFgXjTpxfRzCnf";
+		var trendingUrl = api + apiKey;
+
+		var request = new XMLHttpRequest();
+		request.open('GET',trendingUrl,true);
+
+		request.onload = function(){
+			var dataFetched = JSON.parse(this.response);
+			
+			if(request.status>=200 && request.status<=400){
+				document.getElementById("content-div").innerHTML = "";
+				for(var i=0;i<6;i++){
+					const gifDiv = document.createElement('div');
+					gifDiv.setAttribute('class','col s12 m4 l3 gif-div');
+					app.appendChild(gifDiv);
+					const newgif = document.createElement('img');
+					newgif.setAttribute('src', dataFetched.data[i].images.original.url);
+					gifDiv.appendChild(newgif);
+				}
+			}
+			else{
+				console.log("error"); //to be edited
+			}
+		}
+
+		request.send();
+	</script>
 			</div>
 		</div>
 

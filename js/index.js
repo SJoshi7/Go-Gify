@@ -1,5 +1,7 @@
 searchGif = (id) => {
 
+document.getElementById("paginate").style.display = "block";	
+
 document.getElementById(id).className = "active black";
 for(i=1;i<6;i++){
 	if(i!=id){

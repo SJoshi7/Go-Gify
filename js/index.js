@@ -3,10 +3,6 @@ var count;
 
 searchGif = (id) => {
 	count = id;
-	//paginate when showing search result
-	document.getElementById("paginate").style.display = "block";
-	//play pause once search result shown
-	document.getElementById("pause-play").style.display = "block";
 	//changes active page number in pagination
 	document.getElementById(id).className = "active black";
 	for(i=1;i<6;i++){
@@ -14,7 +10,7 @@ searchGif = (id) => {
 			document.getElementById(i).className = "waves-effect";
 		}
 	}
-
+	
 	const app = document.getElementById('content-div');
 	const api = "https://api.giphy.com/v1/gifs/search?";
 	const apiKey = "&api_key=6gB95G4VQIE6zjRlryyFgXjTpxfRzCnf&q=";
@@ -30,6 +26,10 @@ searchGif = (id) => {
 		console.log(dataFetched.data.length);
 		if(dataFetched.data.length!=0 && request.status>=200 && request.status<=400){
 			document.getElementById("content-div").innerHTML = "";
+			//paginate when showing search result
+	document.getElementById("paginate").style.display = "block";
+	//play pause once search result shown
+	document.getElementById("pause-play").style.display = "block";
 			for(var i=(id-1)*6;i<6*id;i++){
 				const gifDiv = document.createElement('div');
 				gifDiv.setAttribute('class','col s12 m4 l3 gif-div');

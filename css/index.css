@@ -21,9 +21,10 @@
 }
 
 .error-div img{
-	margin-left: 70px;
+	margin-left: 100px;
 	margin-top: 20px;
-	border: 2px soild black;
+	border: 2px solid black;
+	box-shadow: 5px 5px white;
 }
 
 .gif-div img{

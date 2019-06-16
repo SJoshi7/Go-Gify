@@ -15,6 +15,16 @@
 	margin:15px;
 }
 
+.error-div{
+	width: 550px;
+	height: 450px;
+}
+
+.error-div img{
+	margin-left: 70px;
+	margin-top: 20px;
+}
+
 .gif-div img{
 	max-width: 100%;
     max-height: 100%;
@@ -53,6 +63,19 @@ body{
 @media only screen and (max-width: 600px){
 	#content-div{
 		margin-left: 15%;
+	}
+
+	.error-div{
+		width: 250px;
+		height: 200px;
+	}
+
+	.error-div img{
+		margin-left: 5px;
+		max-width: 80%;
+	    max-height: 80%;
+	    min-height: 80%;
+	    min-width: 80%;
 	}
 
 	.gif-div img{

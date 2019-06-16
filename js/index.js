@@ -27,7 +27,8 @@ searchGif = (id) => {
 	request.onload = function(){
 		dataFetched = JSON.parse(this.response);
 		console.log(dataFetched);
-		if(request.status>=200 && request.status<=400){
+		console.log(dataFetched.data.length);
+		if(dataFetched.data.length!=0 && request.status>=200 && request.status<=400){
 			document.getElementById("content-div").innerHTML = "";
 			for(var i=(id-1)*6;i<6*id;i++){
 				const gifDiv = document.createElement('div');
@@ -40,6 +41,16 @@ searchGif = (id) => {
 			}
 		}
 		else{
+			document.getElementById("content-div").innerHTML = "";
+			document.getElementById("pause-play").style.display = "none";
+			document.getElementById("paginate").style.display = "none";
+			const errorDiv = document.createElement('div');
+			errorDiv.setAttribute('class','col s12 m4 l3 error-div');
+			app.appendChild(errorDiv);
+			const newgif = document.createElement('img');
+			newgif.setAttribute('src', "https://media.giphy.com/media/iPnLFwV5pPBsc/giphy.gif");
+			newgif.setAttribute('class',"gifImg");
+			errorDiv.appendChild(newgif);
 			console.log("error"); //to be edited
 		}
 	}

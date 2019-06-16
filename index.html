@@ -6,6 +6,8 @@
 		<link rel="icon" href="img/icon.png" type="image/icon type">
 		<!-- Compiled and minified CSS -->
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	    <!-- My script file -->
+	    <script type="text/javascript" src="js/index.js"></script>
 	    <!--Import Google Icon Font-->
      	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      	<!-- My stylesheet -->
@@ -35,8 +37,20 @@
 				    </div>
 				</nav>
 			</div>
+			<!-- play pause section -->
+			<div class="center" id="pause-play">
+				<span>
+					<!-- <button type="button" onclick="pausePlay(0)">Play</button> -->
+					<a class="waves-effect waves-light btn black" onclick="pausePlay(0)"><i class="material-icons left">play_circle_filled</i>Play</a>
+				</span>
+				<span>
+					<!-- <button type="button" onclick="pausePlay(1)">Pause</button>
+					 -->
+					<a class="waves-effect waves-light btn black" onclick="pausePlay(1)"><i class="material-icons left">pause_circle_filled</i>Pause</a>
+				</span>
+			</div>
 			<!-- section to display the GIFs -->
-			<div id="content-div" class="row ">
+			<div id="content-div" class="row ">	
 				<script type="">
 					const app = document.getElementById('content-div');
 					const trendingUrl = "https://api.giphy.com/v1/gifs/trending?&api_key=6gB95G4VQIE6zjRlryyFgXjTpxfRzCnf&limit=30";
@@ -61,7 +75,6 @@
 							console.log("error"); //to be edited
 						}
 					}
-
 					request.send();
 				</script>
 			</div>
@@ -78,7 +91,6 @@
 		</ul>
 		<!-- Compiled and minified JavaScript at the end of body for optimized loading-->
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	    <!-- My script file -->
-	    <script type="text/javascript" src="js/index.js"></script>
+	    
 	</body>
 </html>

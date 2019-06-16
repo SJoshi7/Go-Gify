@@ -36,6 +36,16 @@
 	color:black;
 }
 
+#pause-play{
+	display: none;
+}
+
+#pause-play span a{
+	margin:10px;
+	margin-left: 30px;
+	margin-bottom: 15px;
+}
+
 body{
 	background-color: #28A745;
 }
@@ -56,6 +66,12 @@ body{
 		width: 250px;
 		height: 200px;
 		margin:3px;
+	}
+
+	#pause-play span a{
+		margin:10px;
+		margin-left: 10px;
+		margin-bottom: 15px;
 	}
 
 

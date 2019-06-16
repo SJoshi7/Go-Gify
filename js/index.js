@@ -1,7 +1,6 @@
 searchGif = (id) => {
 
 document.getElementById(id).className = "active black";
-
 for(i=1;i<6;i++){
 	if(i!=id){
 		document.getElementById(i).className = "waves-effect";
@@ -20,7 +19,6 @@ request.open('GET',searchUrl,true);
 
 request.onload = function(){
 	var dataFetched = JSON.parse(this.response);
-	console.log(dataFetched);
 	
 	if(request.status>=200 && request.status<=400){
 		document.getElementById("content-div").innerHTML = "";

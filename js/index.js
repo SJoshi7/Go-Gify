@@ -3,13 +3,6 @@ var count;
 
 searchGif = (id) => {
 	count = id;
-	//changes active page number in pagination
-	document.getElementById(id).className = "active black";
-	for(i=1;i<6;i++){
-		if(i!=id){
-			document.getElementById(i).className = "waves-effect";
-		}
-	}
 
 	const app = document.getElementById('content-div');
 	const api = "https://api.giphy.com/v1/gifs/search?";
@@ -22,16 +15,27 @@ searchGif = (id) => {
 	request.open('GET',searchUrl,true);
 	request.onload = function(){
 		dataFetched = JSON.parse(this.response);
-		console.log(dataFetched);
-		console.log(dataFetched.data.length);
 		if (dataFetched.data.length!=0){
 			//paginate when showing search result
 			document.getElementById("paginate").style.display = "block";
 			//play pause once search result shown
 			document.getElementById("pause-play").style.display = "block";
 		}
+		display(id);
+	}
 
-		if(dataFetched.data.length!=0 && request.status>=200 && request.status<=400){
+	request.send();
+}
+
+display = (id) => {
+	//changes active page number in pagination
+	document.getElementById(id).className = "active black";
+	for(i=1;i<6;i++){
+		if(i!=id){
+			document.getElementById(i).className = "waves-effect";
+		}
+	}
+	if(dataFetched.data.length!=0 && request.status>=200 && request.status<=400){
 			document.getElementById("content-div").innerHTML = "";
 			for(var i=(id-1)*6;i<6*id;i++){
 				const gifDiv = document.createElement('div');
@@ -54,11 +58,7 @@ searchGif = (id) => {
 			newgif.setAttribute('src', "https://media.giphy.com/media/iPnLFwV5pPBsc/giphy.gif");
 			newgif.setAttribute('class',"gifImg");
 			errorDiv.appendChild(newgif);
-			console.log("error"); //to be edited
 		}
-	}
-
-	request.send();
 }
 
 pausePlay = (n) =>{

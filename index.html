@@ -27,7 +27,7 @@
 			<div id="search-div">
 				<nav>
 				    <div class="nav-wrapper light-blue darken-2">
-				      <form onsubmit="searchGif(1); return false;">
+				      <form onsubmit="searchGif(); return false;">
 				        <div class="input-field white">
 				          <input id="query" type="search" placeholder="search" required>
 				          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
@@ -40,12 +40,9 @@
 			<!-- play pause section -->
 			<div class="center" id="pause-play">
 				<span>
-					<!-- <button type="button" onclick="pausePlay(0)">Play</button> -->
 					<a class="waves-effect waves-light btn black" onclick="pausePlay(0)"><i class="material-icons left">play_circle_filled</i>Play</a>
 				</span>
 				<span>
-					<!-- <button type="button" onclick="pausePlay(1)">Pause</button>
-					 -->
 					<a class="waves-effect waves-light btn black" onclick="pausePlay(1)"><i class="material-icons left">pause_circle_filled</i>Pause</a>
 				</span>
 			</div>

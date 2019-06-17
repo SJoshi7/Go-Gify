@@ -1,7 +1,7 @@
 var dataFetched;
 var count;
 
-searchGif = (id) => {
+searchGif = () => {
 	const app = document.getElementById('content-div');
 	const api = "https://api.giphy.com/v1/gifs/search?";
 	const apiKey = "&api_key=6gB95G4VQIE6zjRlryyFgXjTpxfRzCnf&q=";
@@ -16,12 +16,11 @@ searchGif = (id) => {
 		if (dataFetched.data.length!=0){
 			//paginate when showing search result
 			document.getElementById("paginate").style.display = "block";
-			//play pause once search result shown
+			//play pause once search results are displayed
 			document.getElementById("pause-play").style.display = "block";
 		}
-		display(id);
+		display(1);
 	}
-
 	request.send();
 }
 

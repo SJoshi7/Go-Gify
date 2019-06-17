@@ -1,32 +1,31 @@
+body{
+	background-color: #28A745;
+}
+
 #search-div{
 	width: 80%;
 	margin: 20px;
 	margin-top: 5%;
 	margin-left: 10%;
 }
-
 #content-div{
 	margin-left: 20%;
 }
-
 .gif-div{
 	width: 350px;
 	height: 250px;
 	margin:15px;
 }
-
 .error-div{
 	width: 550px;
 	height: 450px;
 }
-
 .error-div img{
 	margin-left: 100px;
 	margin-top: 20px;
 	border: 2px solid black;
 	box-shadow: 5px 5px white;
 }
-
 .gif-div img{
 	max-width: 100%;
     max-height: 100%;
@@ -35,44 +34,33 @@
     box-shadow: 5px 5px white;
     border: 2px solid black; 
 }
-
 .pagination {
 	display: none;
 }
-
 .pagination li a{
 	color:white;
 }
-
 .pagination li.disabled a{
 	color:black;
 }
-
 #pause-play{
 	display: none;
 }
-
 #pause-play span a{
 	margin:10px;
 	margin-left: 30px;
 	margin-bottom: 15px;
 }
 
-body{
-	background-color: #28A745;
-}
-
 @media only screen and (max-width: 600px){
 	#content-div{
 		margin-left: 15%;
 	}
-
 	.error-div{
 		width: 250px;
 		height: 200px;
 		margin-top: 50px;
 	}
-
 	.error-div img{
 		padding-left:0px;
 		margin-left: 3px; 
@@ -81,25 +69,20 @@ body{
 	    min-height: 85%;
 	    min-width: 85%;
 	}
-
 	.gif-div img{
 		max-width: 80%;
 	    max-height: 80%;
 	    min-height: 80%;
 	    min-width: 80%;
 	}
-
 	.gif-div{
 		width: 250px;
 		height: 200px;
 		margin:3px;
 	}
-
 	#pause-play span a{
 		margin:10px;
 		margin-left: 10px;
 		margin-bottom: 15px;
 	}
-
-
 }

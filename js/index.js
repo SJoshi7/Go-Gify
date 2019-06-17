@@ -2,8 +2,6 @@ var dataFetched;
 var count;
 
 searchGif = (id) => {
-	count = id;
-
 	const app = document.getElementById('content-div');
 	const api = "https://api.giphy.com/v1/gifs/search?";
 	const apiKey = "&api_key=6gB95G4VQIE6zjRlryyFgXjTpxfRzCnf&q=";
@@ -28,6 +26,7 @@ searchGif = (id) => {
 }
 
 display = (id) => {
+	count = id;
 	//changes active page number in pagination
 	document.getElementById(id).className = "active black";
 	for(i=1;i<6;i++){
